@@ -4,6 +4,8 @@ int main()
 {
     int numero1, numero2, i;
     int suma = 0;
+    
+    
     printf("Ingrese dos numeros enteros: \n");
     printf("Ingrese el primer numero: \n");
     printf("-> ");
@@ -11,13 +13,15 @@ int main()
     printf("Ingrese el segundo numero: \n");
     printf("-> ");
     scanf("%d", &numero2);
-
-    if (numero1 > numero2)
+    
+    while (numero1 > numero2)
     {
         printf("El segundo numero deberia ser el mayor.\n");
-        return 0;
+        printf("Ingrese el segundo numero de nuevo: \n");
+        printf("-> ");
+        scanf("%d", &numero2);
     }
-
+    
     for (i = numero1; i <= numero2; i++)
     {
         suma = suma + i;
