@@ -24,7 +24,7 @@ es decir los elementos pertenecientes a A no pertenecientes a B.
 #define FALSE 0
 // prototipos
 void semilla();
-void crear(int[], int);
+void crear(int[], int[], int);
 int iguales(int[], int[], int);
 int repetido(int[], int, int);
 void mostrar(int[], int);
@@ -35,11 +35,13 @@ int diferencia(int[], int[], int);
 int main()
 {
     int A[N], B[N];
-    crear(A, N); // crear arreglo A
+    crear(A, B, N); // crear arreglo A
     printf("A: "); 
     mostrar(A, N); // mostrar arreglo A
+    /*
     crear(B, N); // crear arreglo B
     iguales(A, B, N); // verificar si A y B son iguales
+    */
     printf("B: ");
     mostrar(B, N); // mostrar arreglo B
     interseccion(A, B, N); // interseccion de A y B
@@ -53,7 +55,7 @@ void semilla()
     srand(time(NULL));
 }
 
-void crear(int X[] ,int a)
+void crear(int X[], int Y[] ,int a)
 {
     semilla();
     int i;
@@ -63,9 +65,13 @@ void crear(int X[] ,int a)
         {
             X[i] = rand() % 101;
         } while (repetido(X, X[i], i) == TRUE);
+        do
+        {
+            Y[i] = rand() % 101;
+        } while (repetido(Y, Y[i], i) == TRUE);
     }
 }
-
+/*
 int iguales(int X[], int Y[], int a)
 {
     do
@@ -84,7 +90,7 @@ int iguales(int X[], int Y[], int a)
         }
     } while (X[0] == Y[0]);
 }
-
+*/
 int repetido(int X[], int repite, int hasta)
 {
     if (hasta == 0)
