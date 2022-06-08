@@ -2,17 +2,17 @@
 Crear las siguientes funciones recursivas
 suma(a, b) = a + b
 prod(a, b) = a * b
-exp(a, b) = ab 
+exp(a, b) = ab
 factorial(n) = n!
 fib(n) = n - ésimo término de la sucesión de Fibonacci(1, 2, 3, 5, 8, 13, 21, 34, 55,…)
 */
 
 #include <stdio.h>
-int suma (int , int);
-int prod (int , int, int);
-int exponente (int , int, int);
-int factorial (int, int);
-int fib (int, int, int);
+int suma(int, int);
+int prod(int, int, int);
+int exponente(int, int, int);
+int factorial(int, int);
+int fib(int, int, int);
 
 int main()
 {
@@ -23,17 +23,17 @@ int main()
     printf("Ingrese el segundo numero:\n");
     printf("> ");
     scanf("%d", &b);
-    
-    suma (a, b);
+
+    suma(a, b);
     int c = a;
-    prod (a, b, c);
+    prod(a, b, c);
     exponente(a, b, c);
-    
+
     printf("ingrese un numero para calcular su factorial:\n");
     printf("> ");
     scanf("%d", &d);
     factorial(d, facto);
-    
+
     printf("ingrese un numero para calcular su fibonacci:\n");
     printf("> ");
     scanf("%d", &e);
@@ -41,7 +41,7 @@ int main()
     return 0;
 }
 
-int suma (int a, int b)
+int suma(int a, int b)
 {
     if (b == 0)
     {
@@ -49,11 +49,11 @@ int suma (int a, int b)
     }
     else
     {
-        suma (a + 1, b - 1);
+        suma(a + 1, b - 1);
     }
 }
 
-int prod (int a, int b, int c)
+int prod(int a, int b, int c)
 {
     if (b == 1)
     {
@@ -61,7 +61,7 @@ int prod (int a, int b, int c)
     }
     else
     {
-        prod (a + c, b - 1, c);
+        prod(a + c, b - 1, c);
     }
 }
 
@@ -77,7 +77,7 @@ int exponente(int a, int b, int c)
     }
 }
 
-int factorial (int d, int facto)
+int factorial(int d, int facto)
 {
     if (d == 1)
     {
@@ -90,7 +90,7 @@ int factorial (int d, int facto)
     }
 }
 
-int fib (int e, int fibo, int fibo2)
+int fib(int e, int fibo, int fibo2)
 {
     printf("fibonacci recursivo:\n");
     if (e == 1)
