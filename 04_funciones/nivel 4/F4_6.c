@@ -30,7 +30,7 @@ int main()
     }
     return 0;
 }
-
+// funcion que ordena el arreglo
 int quick_sort(int A[], int izq, int der)
 {
     int i, j, pivote, aux;
