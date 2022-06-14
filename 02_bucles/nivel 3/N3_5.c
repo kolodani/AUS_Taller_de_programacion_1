@@ -1,3 +1,6 @@
+/*
+Permita ingresar una matriz cuadrada 4x4 y luego la muestre por pantalla.
+*/
 #include <stdio.h>
 
 int main()

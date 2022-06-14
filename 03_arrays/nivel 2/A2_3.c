@@ -1,3 +1,8 @@
+/*
+Dado un array A de 10 ints cagado aleatoriamente y con valores comprendidos entre 0 y 100,
+determinar si se tienen más elementos pares que impares o bien misma cantidad.
+Rehaga el ejercicio utilizando un único bucle for si empleo más de uno.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

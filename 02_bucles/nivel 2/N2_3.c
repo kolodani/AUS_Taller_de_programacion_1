@@ -1,3 +1,7 @@
+/*
+Calcule la suma de los cuadrados de los 100 primeros números enteros.
+*/
+
 #include <stdio.h>
 
 int main()

@@ -1,3 +1,7 @@
+/*
+Pida un número entero entre 1 y 15 (controlar esto) y muestre el mismo número de asteriscos por pantalla.
+*/
+
 #include <stdio.h>
 
 int main()

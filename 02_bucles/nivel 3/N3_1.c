@@ -1,3 +1,7 @@
+/*
+Muestre el abecedario por pantalla.
+*/
+
 #include <stdio.h>
 
 int main()

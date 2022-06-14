@@ -1,3 +1,7 @@
+/*
+Empleando bucles for anidados intente generar las siguientes salidas por pantalla.
+*/
+
 #include <stdio.h>
 
 int main()

@@ -1,3 +1,8 @@
+/*
+Dado un array A de N enteros cargados manualmente o bien de forma automática y un número entero r en el rango [-(N-1), N-1].
+El valor r impondrá rotaciones a derecha (en caso de r positivo) o rotaciones a izquierda (en caso de r negativo) sobre los elementos del
+array A. Una rotación es el cambio de posición en los elementos del array.
+*/
 #include <stdio.h>
 #define N 10
 

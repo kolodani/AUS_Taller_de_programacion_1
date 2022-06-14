@@ -1,3 +1,7 @@
+/*
+Pida un número por teclado y decir si es un número primo o no. Controlar que el usuario ingrese un número mayor a 0.
+*/
+
 #include <stdio.h>
 
 int main()

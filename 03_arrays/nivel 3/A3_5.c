@@ -1,3 +1,7 @@
+/*
+Dado un array A de 20 enteros positivos en el rango [0, 100] cargados aleatoriamente, y un entero positivo e, determinar si dicho
+entero e está presente en el array. Extender luego el programa para indicar no solo si está, sino también en cuantas ocasiones aparece.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

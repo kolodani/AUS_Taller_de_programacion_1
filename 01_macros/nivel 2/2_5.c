@@ -1,8 +1,12 @@
+/*
+Determinar si un número está entre el 0 y el 100  (se puede usar cond1 &&cond2)
+*/
+
 #include <stdio.h>
 
 #define ENTRE_0_Y_100(X) ((X)>=0 && (X)<=100)
 
-int main()
+    int main()
 {
     int num, a;
     

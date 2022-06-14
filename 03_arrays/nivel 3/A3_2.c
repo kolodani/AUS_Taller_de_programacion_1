@@ -1,3 +1,6 @@
+/*
+Permitir la carga automática de una matriz de dimensión NxN y mostrarla por pantalla.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

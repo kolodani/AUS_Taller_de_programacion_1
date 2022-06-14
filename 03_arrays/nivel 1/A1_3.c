@@ -1,3 +1,10 @@
+/*
+Declare un array de 10 enteros, permita la carga manual y luego determine lo siguiente:
+- cuantos elementos son positivos y pares
+- cuantos elementos son positivos e impares
+- cuantos elementos son negativos y pares
+- cuantos elementos son negativos e impares
+*/
 #include <stdio.h>
 
 int main()

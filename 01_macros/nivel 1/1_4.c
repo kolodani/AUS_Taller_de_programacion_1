@@ -1,3 +1,7 @@
+/*
+Si un número X es divisible (de manera entera) por otro Y (considerar Y nunca es 0 )
+*/
+
 #include <stdio.h>
 
 #define DIVISIBLE(X,Y) ((X) % (Y) == 0)

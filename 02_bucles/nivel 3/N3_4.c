@@ -1,3 +1,7 @@
+/*
+Muestre los 25 primeros números de la sucesión de Fibonacci.
+*/
+
 #include <stdio.h>
 
 int main()

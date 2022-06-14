@@ -1,3 +1,7 @@
+/*
+Declare dos arrays de 5 enteros cada uno, llamados A y B, luego en un tercer array de igual dimensión llamado S almacene la suma
+de los dos anteriores.
+*/
 #include <stdio.h>
 
 int main()

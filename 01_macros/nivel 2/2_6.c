@@ -1,3 +1,8 @@
+/*
+Determinar si dos números son consecutivos, 
+(5 y 4 o 33 y 34 lo son, pero 40 y 42 o bien 8 y 91 no lo son)
+*/
+
 #include <stdio.h>
 
 #define CONSECUTIVOS(X,Y) ((X) == (Y) + 1 || (X) == (Y) - 1)

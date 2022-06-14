@@ -1,3 +1,7 @@
+/*
+Calcule el factorial de un número entero positvo.
+*/
+
 #include <stdio.h>
 
 int main()

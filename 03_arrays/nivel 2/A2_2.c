@@ -1,3 +1,7 @@
+/*
+Permita la carga aleatoria de dos arrays de 10 enteros cada uno, llamados A y B, e indique cual de los dos tiene más números pares
+tratando de utilizando como máximo dos bucles for en todo el programa.
+*/
 #include <stdio.h>
 #define N 10
 

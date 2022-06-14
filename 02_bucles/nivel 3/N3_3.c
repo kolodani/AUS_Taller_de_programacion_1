@@ -1,3 +1,6 @@
+/*
+Muestre las tablas de multiplicar del 1 al 10.
+*/
 #include <stdio.h>
 
 int main()

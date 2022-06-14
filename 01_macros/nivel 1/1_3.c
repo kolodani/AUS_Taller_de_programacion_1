@@ -1,3 +1,7 @@
+/*
+Si un número es par (aquí es útil el operador %, que da el resto de la división entera)
+*/
+
 #include <stdio.h>
 
 #define PAR(X) ((X) % 2 == 0)

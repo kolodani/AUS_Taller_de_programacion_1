@@ -1,3 +1,6 @@
+/*
+Permita la caga de una array de 30 enteros aleatorios. Luego mostrarlos por pantalla.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

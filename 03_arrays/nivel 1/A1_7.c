@@ -1,3 +1,10 @@
+/*
+Declare dos arrays de 10 enteros con valores entre [0, 50] llamados M y N, luego determine si son:
+- iguales: cuando cada componente ubicada en misma posición coincide.
+- similares frente a suma: cuando no tienen las mismas componentes pero la suma de los elementos coincide
+- diferentes: cuando no coinciden ni en las componentes ni en la suma
+*/
+
 #include <stdio.h>
 #define L 10
 

@@ -1,3 +1,7 @@
+/*
+Muestre los números impares que hay entre 1 y 100.
+*/
+
 #include <stdio.h>
 
 int main()

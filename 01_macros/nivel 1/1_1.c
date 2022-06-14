@@ -1,3 +1,7 @@
+/*
+El mínimo entre dos enteros.
+*/
+
 #include <stdio.h>
 
 #define min(X, Y) ((X) < (Y) ? (X) : (Y))

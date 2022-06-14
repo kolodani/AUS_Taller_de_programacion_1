@@ -1,3 +1,7 @@
+/*
+Muestre la suma de todos los números impares que van del 1 al 100.
+*/
+
 #include <stdio.h>
 
 int main()

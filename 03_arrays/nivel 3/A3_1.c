@@ -1,3 +1,6 @@
+/*
+Permitir el ingreso de una matriz de enteros de dimensión 3x4 y mostrarla por pantalla.
+*/
 #include <stdio.h>
 #define M 3
 #define N 4

@@ -1,3 +1,6 @@
+/*
+Calcule el promedio de 10 números ingresados por el usuario
+*/
 #include <stdio.h>
 
 int main()

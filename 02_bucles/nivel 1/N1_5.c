@@ -1,3 +1,8 @@
+/*
+Pida dos números y multiplique todos los números comprendidos entre el primero y el segundo (inclusive).
+Debe controlarse que el segundo número sea mayor que el primero.
+*/
+
 #include <stdio.h>
 
 int main()

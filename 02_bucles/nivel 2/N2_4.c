@@ -1,3 +1,7 @@
+/*
+Calcule el promedio de N números, se dejarán de solicitar números hasta que se introduzca el cero.
+*/
+
 #include <stdio.h>
 
 int main()

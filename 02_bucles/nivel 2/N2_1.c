@@ -1,3 +1,7 @@
+/*
+Muestre los divisores de un número.
+*/
+
 #include <stdio.h>
 
 int main()
