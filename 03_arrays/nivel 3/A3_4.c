@@ -1,7 +1,8 @@
 /*
-Declarar un array A de 15 elementos enteros. Solicitar al usuario el ingreso de un valor por vez e ir colocando dicho entero en el
-array, donde cada elemento previo existente en el array A deba ser menor o igual y cada elemento posterior deba ser mayor al que el
-usuario ingresó. En cada paso mostrar el estado del array. Al finalizar deberá quedar el array ordenado de forma ascendente.
+Declarar un array A de 15 elementos enteros. Solicitar al usuario el ingreso de un valor por vez
+e ir colocando dicho entero en el array, donde cada elemento previo existente en el array A
+deba ser menor o igual y cada elemento posterior deba ser mayor al que el usuario ingresó.
+En cada paso mostrar el estado del array. Al finalizar deberá quedar el array ordenado de forma ascendente.
 */
 #include <stdio.h>
 #define N 15

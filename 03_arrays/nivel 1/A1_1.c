@@ -1,6 +1,6 @@
 /*
-Declare un array de 10 enteros y permita que el usuario ingrese valores comprendidos entre el -10 y el 10 (asegurar esto) y luego lo
-muestre por pantalla.
+Declare un array de 10 enteros y permita que el usuario ingrese valores comprendidos entre el -10 y el 10 
+(asegurar esto) y luego lo muestre por pantalla.
 */
 #include <stdio.h>
 

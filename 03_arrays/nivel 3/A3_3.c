@@ -1,5 +1,5 @@
 /*
- Dadas dos matrices de dimensión NxN, llamadas X e Y, mostrar por pantalla la suma de las mismas.
+Dadas dos matrices de dimensión NxN, llamadas X e Y, mostrar por pantalla la suma de las mismas.
 */
 #include <stdio.h>
 #include <stdlib.h>

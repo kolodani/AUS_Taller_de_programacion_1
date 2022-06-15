@@ -20,7 +20,9 @@ int main()
     if (numero1 > numero2)
     {
         printf("El segundo numero deberia ser el mayor.\n");
-        return 0;
+        printf("Ingrese el segundo numero de nuevo: \n");
+        printf("-> ");
+        scanf("%d", &numero2);
     }
     
     for (i = numero1; i <= numero2; i++)

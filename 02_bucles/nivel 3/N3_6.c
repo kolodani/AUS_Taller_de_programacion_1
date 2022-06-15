@@ -10,7 +10,7 @@ int main()
     int M = 1;
     int N = 5;
     int K = 1;
-    
+    // ejercicio a
     printf("a)\n");
     
     while (M < 6)
@@ -22,7 +22,7 @@ int main()
         M++;
         printf("\n");
     }
-    
+    // ejercicio b
     printf("b)\n");
     
     for (i = 0; i < 4; i++)
@@ -33,7 +33,7 @@ int main()
         }
         printf("\n");
     }
-    
+    // ejercicio c
     printf("c)\n");
     
     while (N > 0)
@@ -45,7 +45,7 @@ int main()
         N--;
         printf("\n");
     }
-    
+    // ejercicio d
     printf("d)\n");
     
     while (K <= 28)

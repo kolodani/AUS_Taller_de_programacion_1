@@ -1,43 +1,43 @@
 /*
-Reciba 3 floats indicando la longitud de los lados de un triángulo e i
-ndique si es posible formar un triángulo con dichos lados.
+Reciba 3 floats indicando la longitud de los lados de un triángulo e 
+indique si es posible formar un triángulo con dichos lados.
 */
 
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
 
-float ingresar_lado();
+float ingresar_lado(int *);
 float validar_lado(float);
 float triangulo(float, float, float);
-int contador = 1;
 
 int main()
 {
+    int contador = 1;
     float lado1, lado2, lado3;
     printf("ingrese tres longitudes y te dire si pudes hacer un triangulo, y que tipo de triangulo es\n");
-    lado1 = ingresar_lado();
-    lado2 = ingresar_lado();
-    lado3 = ingresar_lado();
+    lado1 = ingresar_lado(&contador);
+    lado2 = ingresar_lado(&contador);
+    lado3 = ingresar_lado(&contador);
     if (validar_lado(lado1) == TRUE && validar_lado(lado2) == TRUE && validar_lado(lado3) == TRUE)
     {
         triangulo(lado1, lado2, lado3);
     }
     else
     {
-        printf("no puedes hacer un triangulo con  una o mas longitudes iguales o menores a cero\n");
+        printf("no puedes hacer un triangulo con una o mas longitudes iguales o menores a cero\n");
     }
     
     return 0;
 }
 
-float ingresar_lado()
+float ingresar_lado(int *a)
 {
     float lado;
-    printf("ingrese el lado %d\n", contador);
+    printf("ingrese el lado %d\n", *a);
     printf("> ");
     scanf("%f", &lado);
-    contador++;
+    *a++;
     return lado;
 }
 

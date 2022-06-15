@@ -1,6 +1,7 @@
 /*
-Declare un array de 10 enteros en el rango [0, 100] (asegurarlo) y muestre por pantalla dichos elementos junto con la suma, el
-promedio y la varianza. Investigar sobre los términos que desconozca.
+Declare un array de 10 enteros en el rango [0, 100] (asegurarlo) y 
+muestre por pantalla dichos elementos junto con la suma, el promedio y la varianza.
+Investigar sobre los términos que desconozca.
 */
 #include <stdio.h>
 #define N 10

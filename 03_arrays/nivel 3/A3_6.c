@@ -1,6 +1,7 @@
 /*
-Dado un array de 10 enteros positivos en el rango [0, 100] cargados aleatoriamente, mostrarlo por pantalla, luego ordenar sus
-elementos de manera ascendente y finalmente mostrar el resultado.
+Dado un array de 10 enteros positivos en el rango [0, 100] cargados aleatoriamente,
+mostrarlo por pantalla, luego ordenar sus elementos de manera ascendente
+y finalmente mostrar el resultado.
 */
 #include <stdio.h>
 #include <stdlib.h>
