@@ -5,6 +5,7 @@
 #include <time.h>
 
 #define MAX_PARTIDA 8
+#define MAX_LETRAS 6
 
 void getWordInLine(char *, int , char *);
 void aleatorio(int[]);
@@ -14,7 +15,7 @@ int main()
     // variables
     int cantidad_total_de_partidas, cantidad_de_partidas = 1;
     char respuesta;
-    char arreglo_de_palabras[MAX_PARTIDA];
+    char arreglo_de_palabras[MAX_PARTIDA][MAX_LETRAS];
     int pos[MAX_PARTIDA];
     char palabra[6];
 
@@ -40,6 +41,7 @@ int main()
     {
         printf("Partida Nro %d de %d\n", cantidad_de_partidas, cantidad_total_de_partidas);
         getWordInLine("PALABRAS.txt", pos[cantidad_de_partidas-1], palabra);
+        printf("La palabra es: %s\n", palabra);
         arreglo_de_palabras[cantidad_de_partidas-1] = palabra;
         // CODIGO A COMPLETAR
         
