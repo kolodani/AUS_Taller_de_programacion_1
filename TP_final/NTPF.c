@@ -28,7 +28,6 @@ void acerto_palabra(char *, char *, char *);
 void finalizar_partida(char *);
 void puntaje(int *, int *, char *, char *, int);
 
-
 //PROGRAMA PRINCIPAL
 int main()
 {
