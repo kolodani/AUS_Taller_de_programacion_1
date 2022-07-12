@@ -17,6 +17,7 @@ void aleatorio(int []);
 void getWordInLine(char *, int, char *);
 void adivinar_palabra(char *, char *);
 void comparar_palabra(char *, char *);
+void acerto_palabra(char *, char *, char *);
 void finalizar_partida(char *);
 
 
@@ -89,12 +90,12 @@ void cartel_partidas(int *a, int b)
 
 void finalizar_partida(char *respuesta)
 {
-    printf("Quiere seguir jugando (s/n)?\n");
+    printf("Quiere seguir jugando (S/N)?\n");
     printf("> ");
     scanf(" %c", respuesta);
-    while (*respuesta != 's' && *respuesta != 'n')
+    while (*respuesta != 'S' && *respuesta != 'N')
     {
-        printf("No has elegido una respuesta valida, intenta de nuevo: (s/n)\n");
+        printf("No has elegido una respuesta valida, intenta de nuevo: (S/N)\n");
         printf("> ");
         scanf(" %c", respuesta);
     }
@@ -143,22 +144,65 @@ void aleatorio(int pos[])
 void adivinar_palabra(char *palabra, char *p_jugador)
 {
     int i;
+    char adivino = 'n';
     for (i = 0; i < MAX_INTENTOS; i++)
     {
         printf("Intento Nro %d de %d\n", i + 1, MAX_INTENTOS);
         printf("Ingrese una palabra:\n");
         printf("> ");
-        scanf(" %c", p_jugador);
+        scanf(" %s", p_jugador);
         comparar_palabra(palabra, p_jugador);
+        acerto_palabra(palabra, p_jugador, &adivino);
+        if (adivino == 's')
+        {
+            break;
+        }
     }
 }
 
 void comparar_palabra(char *palabra, char *p_jugador)
 {
-    int i;
+    int i, j, aux = 0;
     for (i = 0; i < MAX_LETRAS; i++)
     {
-        
+        if (palabra[i] == p_jugador[i])
+        {
+            printf("%c", p_jugador[i]);
+            aux++;
+        }
+        if (palabra[i] != p_jugador[i])
+        {
+            for (j = 0; j < MAX_LETRAS; j++)
+            {
+                if ((palabra[i] == p_jugador[j]) && (i != j))
+                {
+                    printf("*");
+                    aux++;
+                }
+            }
+        }
+        if (aux == 0)
+        {
+            printf("_");
+        }
+        aux = 0;
     }
-    
+    printf("\n");
+}
+
+void acerto_palabra(char *palabra, char *p_jugador, char *adivino)
+{
+    int i, aux = 0;
+    for (i = 0; i < MAX_LETRAS; i++)
+    {
+        if (palabra[i] == p_jugador[i])
+        {
+            aux++;
+        }
+    }
+    if (aux == MAX_LETRAS)
+    {
+        printf("Felicidades, adivinaste la palabra!\n");
+        *adivino = 's';
+    }
 }
