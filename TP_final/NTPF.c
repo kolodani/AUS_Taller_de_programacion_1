@@ -8,6 +8,13 @@
 #define MAX_PARTIDA 8
 #define MAX_LETRAS 5
 #define MAX_INTENTOS 6
+#define PUNTOS 5000
+#define PRIMER_ACIERTO 10000
+#define LETRA_LUGAR 100
+#define LETRA_NOLUGAR 50
+#define INTENTO_FALLIDO 500
+#define ACIERTO 2000
+#define PERDIO 0
 
 // PROTOTIPO DE FUNCIONES
 void cartel_de_presentacion();
@@ -19,6 +26,7 @@ void adivinar_palabra(char *, char *);
 void comparar_palabra(char *, char *);
 void acerto_palabra(char *, char *, char *);
 void finalizar_partida(char *);
+void puntaje(int *, int *, char *, char *, int);
 
 
 //PROGRAMA PRINCIPAL
@@ -41,20 +49,14 @@ int main()
     {
         cartel_partidas(&partida_actual, cant_total_partidas_jugador);
         getWordInLine("PALABRAS.txt", pos[i], palabra);
-        printf("La palabra es: %s\n", palabra); // linea de prueba
-        // en proceso
         adivinar_palabra(palabra, palabra_jugador);
-        //
+        // FINALIZAR PARTIDA
         finalizar_partida(&salida);
-        if (salida == 'n')
+        if (salida == 'N')
         {
             break;
         }
     }
-    
-    
-    
-    
     return 0;
 }
 
@@ -99,6 +101,7 @@ void finalizar_partida(char *respuesta)
         printf("> ");
         scanf(" %c", respuesta);
     }
+    printf("\n");
 }
 
 void getWordInLine(char *fileName, int lineNumber, char *p)
@@ -131,7 +134,7 @@ void aleatorio(int pos[])
     for (i = 0; i < MAX_PARTIDA; i++)
     {
         pos[i] = rand() % 30 + 1;
-        for (j = i; j > +0; j--)
+        for (j = i; j >= 0; j--)
         {
             while ((pos[i] == pos[j]) && (i != j))
             {
@@ -145,6 +148,8 @@ void adivinar_palabra(char *palabra, char *p_jugador)
 {
     int i;
     char adivino = 'n';
+    int arregllo_puntaje[MAX_LETRAS] = {0, 0, 0, 0, 0};
+    int puntaje_actual = PUNTOS;
     for (i = 0; i < MAX_INTENTOS; i++)
     {
         printf("Intento Nro %d de %d\n", i + 1, MAX_INTENTOS);
@@ -152,11 +157,28 @@ void adivinar_palabra(char *palabra, char *p_jugador)
         printf("> ");
         scanf(" %s", p_jugador);
         comparar_palabra(palabra, p_jugador);
+        puntaje(&puntaje_actual, arregllo_puntaje, palabra, p_jugador, i);
         acerto_palabra(palabra, p_jugador, &adivino);
         if (adivino == 's')
         {
+            if (i == 0)
+            {
+                puntaje_actual = PRIMER_ACIERTO;
+            }
+            else if (i != 0)
+            {
+                puntaje_actual = puntaje_actual + ACIERTO;
+            }
             break;
         }
+        if (adivino == 'n')
+        {
+            puntaje_actual = puntaje_actual - INTENTO_FALLIDO;
+        }
+    }
+    if (adivino == 'n')
+    {
+        puntaje_actual = PERDIO;
     }
 }
 
@@ -170,11 +192,11 @@ void comparar_palabra(char *palabra, char *p_jugador)
             printf("%c", p_jugador[i]);
             aux++;
         }
-        if (palabra[i] != p_jugador[i])
+        else if(palabra[i] != p_jugador[i])
         {
             for (j = 0; j < MAX_LETRAS; j++)
             {
-                if ((palabra[i] == p_jugador[j]) && (i != j))
+                if ((palabra[j] == p_jugador[i]) && (i != j))
                 {
                     printf("*");
                     aux++;
@@ -204,5 +226,29 @@ void acerto_palabra(char *palabra, char *p_jugador, char *adivino)
     {
         printf("Felicidades, adivinaste la palabra!\n");
         *adivino = 's';
+    }
+}
+
+void puntaje(int *puntaje_actual, int *arregllo_puntaje, char *palabra, char *p_jugador, int i)
+{
+    int j, k;
+    for (j = 0; j < MAX_LETRAS; j++)
+    {
+        if ((palabra[j] == p_jugador[j]) && (arregllo_puntaje[j] != LETRA_LUGAR))
+        {
+            arregllo_puntaje[j] = LETRA_LUGAR;
+            *puntaje_actual = *puntaje_actual + arregllo_puntaje[j];
+        }
+        if (palabra[j] != p_jugador[j])
+        {
+            for (k = 0; k < MAX_LETRAS; k++)
+            {
+                if ((palabra[j] == p_jugador[k]) && (arregllo_puntaje[j] != LETRA_LUGAR && arregllo_puntaje[j] != LETRA_NOLUGAR))
+                {
+                    arregllo_puntaje[j] = LETRA_NOLUGAR;
+                    *puntaje_actual = *puntaje_actual + arregllo_puntaje[j];
+                }
+            }
+        }
     }
 }
