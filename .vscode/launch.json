@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "c:/Users/danie/AUS_practica_taller_de_programacion_1",
-      "program": "c:/Users/danie/AUS_practica_taller_de_programacion_1/build/Debug/outDebug",
+      "cwd": "/home/danikolo/Documents/repositorios/AUS_practica_taller_de_programacion_1",
+      "program": "/home/danikolo/Documents/repositorios/AUS_practica_taller_de_programacion_1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

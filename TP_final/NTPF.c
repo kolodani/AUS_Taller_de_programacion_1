@@ -1,4 +1,3 @@
-// LIBRERIAS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,21 +19,23 @@
 void cartel_de_presentacion();
 void menu_partidas(int *);
 void cartel_partidas(int *, int);
-void aleatorio(int []);
+void aleatorio(int[]);
 void getWordInLine(char *, int, char *);
-void adivinar_palabra(char *, char *);
+void adivinar_palabra(char *, char *, int *);
 void comparar_palabra(char *, char *);
 void acerto_palabra(char *, char *, char *);
 void finalizar_partida(char *);
 void puntaje(int *, int *, char *, char *, int);
+void almacenador_puntajes(int **, int *);
+void mostrar_puntajes(int[], int);
 
-//PROGRAMA PRINCIPAL
+// PROGRAMA PRINCIPAL
 int main()
 {
     // VARIABLES
     int cant_total_partidas_jugador = 0;
     int partida_actual = 0;
-    int i;
+    int i, j;
     char salida = 's';
     int pos[MAX_PARTIDA];
     char palabra[MAX_LETRAS];
@@ -42,20 +43,24 @@ int main()
     // JUEGO
     cartel_de_presentacion();
     menu_partidas(&cant_total_partidas_jugador);
+    int puntajes_totales[cant_total_partidas_jugador];
     aleatorio(pos);
     // CICLO DE JUEGO
     for (i = 0; i < cant_total_partidas_jugador; i++)
     {
         cartel_partidas(&partida_actual, cant_total_partidas_jugador);
         getWordInLine("PALABRAS.txt", pos[i], palabra);
-        adivinar_palabra(palabra, palabra_jugador);
+        adivinar_palabra(palabra, palabra_jugador, &puntajes_totales[i]);
         // FINALIZAR PARTIDA
         finalizar_partida(&salida);
         if (salida == 'N')
         {
+            cant_total_partidas_jugador = i + 1;
             break;
         }
     }
+    // FIN DE LA PARTIDA
+    mostrar_puntajes(puntajes_totales, cant_total_partidas_jugador);
     return 0;
 }
 
@@ -143,7 +148,7 @@ void aleatorio(int pos[])
     }
 }
 
-void adivinar_palabra(char *palabra, char *p_jugador)
+void adivinar_palabra(char *palabra, char *p_jugador, int *puntajes)
 {
     int i;
     char adivino = 'n';
@@ -163,10 +168,12 @@ void adivinar_palabra(char *palabra, char *p_jugador)
             if (i == 0)
             {
                 puntaje_actual = PRIMER_ACIERTO;
+                almacenador_puntajes(&puntajes, &puntaje_actual);
             }
             else if (i != 0)
             {
                 puntaje_actual = puntaje_actual + ACIERTO;
+                almacenador_puntajes(&puntajes, &puntaje_actual);
             }
             break;
         }
@@ -178,6 +185,8 @@ void adivinar_palabra(char *palabra, char *p_jugador)
     if (adivino == 'n')
     {
         puntaje_actual = PERDIO;
+        almacenador_puntajes(&puntajes, &puntaje_actual);
+        printf("Mala suerte, no has acertado!\n");
     }
 }
 
@@ -191,7 +200,7 @@ void comparar_palabra(char *palabra, char *p_jugador)
             printf("%c", p_jugador[i]);
             aux++;
         }
-        else if(palabra[i] != p_jugador[i])
+        else if (palabra[i] != p_jugador[i])
         {
             for (j = 0; j < MAX_LETRAS; j++)
             {
@@ -250,4 +259,37 @@ void puntaje(int *puntaje_actual, int *arregllo_puntaje, char *palabra, char *p_
             }
         }
     }
+}
+
+void almacenador_puntajes(int **puntajes, int *puntaje_actual)
+{
+    **puntajes = *puntaje_actual;
+}
+
+void mostrar_puntajes(int puntajes[], int total)
+{
+    int i, aux = 0, suma = 0;
+    int intento_mayor, puntaje_mayor = PERDIO, intento_menor, puntaje_menor = PRIMER_ACIERTO;
+    for (i = 0; i < total; i++)
+    {
+        printf("El puntaje de la partida %d fue de: %d\n", i + 1, puntajes[i]);
+        if (puntajes[i] > puntaje_mayor)
+        {
+            puntaje_mayor = puntajes[i];
+            intento_mayor = i + 1;
+        }
+        if (puntajes[i] < puntaje_menor)
+        {
+            puntaje_menor = puntajes[i];
+            intento_menor = i + 1;
+        }
+        if (puntajes[i] != PERDIO)
+        {
+            suma = suma + puntajes[i];
+            aux++;
+        }
+    }
+    printf("El puntaje mas alto fue de: %d en la partida nro %d\n", puntaje_mayor, intento_mayor);
+    printf("El puntaje mas bajo fue de: %d en la partida nro %d\n", puntaje_menor, intento_menor);
+    printf("El puntaje promedio fue de: %d\n", suma / aux);
 }
