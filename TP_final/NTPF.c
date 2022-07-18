@@ -1,3 +1,4 @@
+// LIBRERIAS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -52,11 +53,14 @@ int main()
         getWordInLine("PALABRAS.txt", pos[i], palabra);
         adivinar_palabra(palabra, palabra_jugador, &puntajes_totales[i]);
         // FINALIZAR PARTIDA
-        finalizar_partida(&salida);
-        if (salida == 'N')
+        if ((i + 1) < cant_total_partidas_jugador)
         {
-            cant_total_partidas_jugador = i + 1;
-            break;
+            finalizar_partida(&salida);
+            if (salida == 'N')
+            {
+                cant_total_partidas_jugador = i + 1;
+                break;
+            }
         }
     }
     // FIN DE LA PARTIDA

@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "*.html": "html",
-    "N3_2.C": "cpp"
+    "N3_2.C": "cpp",
+    "004.C": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.cCompilerPath": "C:/mingw64/bin/gcc.exe",
