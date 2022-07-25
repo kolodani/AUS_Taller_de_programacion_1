@@ -50,7 +50,7 @@ int main()
     {
         strcpy(arreglo_de_palabras[i], vacio);
     }
-
+    
     // JUEGO
     cartel_de_presentacion();
     menu_partidas(&cant_total_partidas_jugador);
@@ -326,8 +326,8 @@ void mostrar_palabras(char arreglo_de_palabras[][MAX_LETRAS], int total_de_parti
     for (i = 0; i < total_de_partidas; i++)
     {
         printf("Palabras de la partida numero %d: \n", i + 1);
-
-        for (j = 0; j < MAX_INTENTOS; j++)
+        
+        for (j = 0; j < MAX_INTENTOS ; j++)
         {
             if (strcmp(arreglo_de_palabras[(i * MAX_INTENTOS) + j], vacio) != 0)
             {
