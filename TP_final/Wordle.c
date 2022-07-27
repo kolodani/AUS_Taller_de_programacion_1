@@ -39,7 +39,7 @@ int main()
     int cant_total_partidas_jugador = 0;                               // CANTIDAD DE PARTIDAS JUGADAS POR EL JUGADOR
     int partida_actual = 0;                                            // VALOR DE PARTIDA ACTUAL
     int i, j;                                                          // VARIABLES AUXILIARES
-    char salida = 's';                                                 // VARIABLE PARA SALIR DEL JUEGO
+    char salida = 'S';                                                 // VARIABLE PARA SALIR DEL JUEGO
     int pos[MAX_PARTIDA];                                              // VARIABLE PARA ALMACENAR LOS NUMEROS ALEATORIOS PARA GENERAR LAS PALABRAS
     int arreglo_de_soluciones[MAX_PARTIDA] = {0, 0, 0, 0, 0, 0, 0, 0}; // VARIABLE PARA ALMACENAR LA CANTIDAD DE INTENTOS POR PARTIDA
     char palabra[MAX_LETRAS];                                          // VARIABLE PARA ALMACENAR LA PALABRA A ADIVINAR
@@ -96,6 +96,9 @@ void cartel_de_presentacion()
     printf("En este juego tendras que adivinar la palabra secreta, que sera de 5 letras.\n");
     printf("Para adivinarla, tendras 6 intentos.\n");
     printf("Para cada intento, te dira si la letra ingresada es correcta o no.\n");
+    printf("Si la letra es correcta, se imprimira en pantalla la letra ingresada.\n");
+    printf("Si la letra es correcta pero no su ubicacion, se imprimira un asterisco *.\n");
+    printf("Si la letra es incorrecta, se imprimira un guion bajo _.\n");
     printf("RECUERDA: JUEGA TU PARTIDA CON LA MAYUSCULAS ACTIVADA\n");
     printf("Te deseo buena suerte! y que comience el juego!!!\n");
 }
@@ -228,7 +231,10 @@ void adivinar_palabra(char *palabra, char *p_jugador, int *puntajes, char arregl
             puntaje(&puntaje_actual, arregllo_puntaje, palabra, p_jugador, i); // CALCULA EL PUNTAJE DE LETRA Y LUGAR ACERTADO
             puntaje_actual = puntaje_actual - INTENTO_FALLIDO;
         }
-        printf("puntaje actual: %d\n\n", puntaje_actual);
+        if (i != MAX_INTENTOS - 1) // SI EL JUGADOR NO ADIVINA LA PALABRA EN EL ULTIMO INTENTO NO SE HACE ESTE IF
+        {
+            printf("puntaje actual: %d\n\n", puntaje_actual);
+        }
     }
     if (adivino == 'n') // SECCION QUE SE REALICA CUANDO EL JUGADOR NO ACERTO LA PALABRA EN LOS 6 INTENTOS
     {
