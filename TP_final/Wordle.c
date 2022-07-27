@@ -9,7 +9,7 @@
 #define MAX_LETRAS 5         // MAXIMO DE LETRAS POR PALABRA
 #define MAX_INTENTOS 6       // MAXIMO DE INTENTOS POR PARTIDA
 #define MAX_PALABRAS 48      // MAXIMO DE PALABRAS QUE PUEDEN SER USADAS EN LA PARTIDA
-#define PUNTOS 5000          // PUNTOS POR ACERTAR LA PALABRA
+#define PUNTOS 5000          // PUNTOS AL INICIAR UNA PARTIDA
 #define PRIMER_ACIERTO 10000 // PUNTOS POR ACERTAR LA PALABRA EN EL PRIMER INTENTO
 #define ACIERTO 2000         // PUNTOS POR ACERTAR UNA PALABRA
 #define INTENTO_FALLIDO 500  // PUNTOS POR FALLAR UN INTENTO
@@ -209,7 +209,6 @@ void adivinar_palabra(char *palabra, char *p_jugador, int *puntajes, char arregl
         strcpy(arreglo_de_palabras[(partida * MAX_INTENTOS) + i], p_jugador); // GUARDA LA PALABRA DEL JUGADOR EN EL ARREGLO DE PALABRAS
         comparar_palabra(palabra, p_jugador);                                 // COMPARA LA PALABRA DEL JUGADOR E IMPRIME RESULTADOS DE CADA LETRA
         acerto_palabra(palabra, p_jugador, &adivino);                         // COMPARA LA PALABRA DEL JUGADOR CON LA PALABRA A ADIVINAR
-        printf("\n");
         if (adivino == 's') // SECCION QUE SE REALIZA SI EL JUGADOR ADIVINA LA PALABRA
         {
             if (i == 0) // SI SE ACIERTA EN EL PRIMER INTENTO SE HACE ESTE IF
@@ -229,14 +228,15 @@ void adivinar_palabra(char *palabra, char *p_jugador, int *puntajes, char arregl
             puntaje(&puntaje_actual, arregllo_puntaje, palabra, p_jugador, i); // CALCULA EL PUNTAJE DE LETRA Y LUGAR ACERTADO
             puntaje_actual = puntaje_actual - INTENTO_FALLIDO;
         }
+        printf("puntaje actual: %d\n\n", puntaje_actual);
     }
     if (adivino == 'n') // SECCION QUE SE REALICA CUANDO EL JUGADOR NO ACERTO LA PALABRA EN LOS 6 INTENTOS
     {
         puntaje_actual = PERDIO;
         almacenador_puntajes(&puntajes, &puntaje_actual);
         printf("Mala suerte, no has acertado!\n");
+        printf("puntaje de derrota: %d\n\n", puntaje_actual);
     }
-    printf("puntaje: %d\n", puntaje_actual);
 }
 /*
 COMPARAR PALABRA IMPRIME LOS RESULTADOS DE CADA LETRA DE LA PALABRA DEL JUGADOR
