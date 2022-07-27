@@ -212,7 +212,7 @@ void adivinar_palabra(char *palabra, char *p_jugador, int *puntajes, char arregl
         strcpy(arreglo_de_palabras[(partida * MAX_INTENTOS) + i], p_jugador); // GUARDA LA PALABRA DEL JUGADOR EN EL ARREGLO DE PALABRAS
         comparar_palabra(palabra, p_jugador);                                 // COMPARA LA PALABRA DEL JUGADOR E IMPRIME RESULTADOS DE CADA LETRA
         acerto_palabra(palabra, p_jugador, &adivino);                         // COMPARA LA PALABRA DEL JUGADOR CON LA PALABRA A ADIVINAR
-        if (adivino == 's') // SECCION QUE SE REALIZA SI EL JUGADOR ADIVINA LA PALABRA
+        if (adivino == 's')                                                   // SECCION QUE SE REALIZA SI EL JUGADOR ADIVINA LA PALABRA
         {
             if (i == 0) // SI SE ACIERTA EN EL PRIMER INTENTO SE HACE ESTE IF
             {
@@ -338,18 +338,18 @@ void mostrar_puntajes(int puntajes[], int total)
     printf("PUNTAJES DE LAS PARTIDAS:\n");
     for (i = 0; i < total; i++)
     {
-        printf("El puntaje de la partida %d fue de: %d\n", i + 1, puntajes[i]);     // IMPRIME LOS PUNTAJES DE CADA PARTIDA
-        if (puntajes[i] > puntaje_mayor)                                            // SECCION PARA ALMACENAR EL PUNTAJE MAYOR
+        printf("El puntaje de la partida %d fue de: %d\n", i + 1, puntajes[i]); // IMPRIME LOS PUNTAJES DE CADA PARTIDA
+        if (puntajes[i] > puntaje_mayor)                                        // SECCION PARA ALMACENAR EL PUNTAJE MAYOR
         {
             puntaje_mayor = puntajes[i];
             intento_mayor = i + 1;
         }
-        if (puntajes[i] < puntaje_menor)                                             // SECCION PARA ALMACENAR EL PUNTAJE MENOR
+        if (puntajes[i] < puntaje_menor) // SECCION PARA ALMACENAR EL PUNTAJE MENOR
         {
             puntaje_menor = puntajes[i];
             intento_menor = i + 1;
         }
-        if (puntajes[i] != PERDIO)                                                  // SECCION QUE SUMA LOS PUNTAJES QUE SE GANO LA PARTIDA
+        if (puntajes[i] != PERDIO) // SECCION QUE SUMA LOS PUNTAJES QUE SE GANO LA PARTIDA
         {
             suma = suma + puntajes[i];
             aux++;
@@ -358,7 +358,7 @@ void mostrar_puntajes(int puntajes[], int total)
     printf("\n");
     printf("El puntaje mas alto fue de: %d en la partida nro %d\n\n", puntaje_mayor, intento_mayor);
     printf("El puntaje mas bajo fue de: %d en la partida nro %d\n\n", puntaje_menor, intento_menor);
-    printf("El puntaje promedio fue de: %d\n\n", suma / aux);                       // IMPRIME EL PUNTAJE PROMEDIO DE TODAS LAS PARTIDAS GANADAS
+    printf("El puntaje promedio fue de: %d\n\n", suma / aux); // IMPRIME EL PUNTAJE PROMEDIO DE TODAS LAS PARTIDAS GANADAS
 }
 /*
 FUNCION QUE MUESTRA LAS PALABRAS EMPLEADAS EN CADA INTENTO DEL JUGADOR
@@ -370,12 +370,12 @@ void mostrar_palabras(char arreglo_de_palabras[][MAX_LETRAS], int total_de_parti
     printf("PALABRAS USADAS EN TODO TU JUEGO:\n");
     for (i = 0; i < total_de_partidas; i++)
     {
-        printf("Palabras de la partida numero %d: \n", i + 1);           // IMPRIME LAS PALABRAS USADAS EN CADA PARTIDA
+        printf("Palabras de la partida numero %d: \n", i + 1); // IMPRIME LAS PALABRAS USADAS EN CADA PARTIDA
         for (j = 0; j < MAX_INTENTOS; j++)
         {
             if (strcmp(arreglo_de_palabras[(i * MAX_INTENTOS) + j], vacio) != 0)
             {
-                printf("la palabra %d es: ", j + 1);                    // IMPRIME LAS PALABRAS USADAS EN CADA INTENTO
+                printf("la palabra %d es: ", j + 1); // IMPRIME LAS PALABRAS USADAS EN CADA INTENTO
                 for (k = 0; k < MAX_LETRAS; k++)
                 {
                     printf("%c", arreglo_de_palabras[(i * MAX_INTENTOS) + j][k]);
