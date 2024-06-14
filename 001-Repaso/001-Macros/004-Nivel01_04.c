@@ -1,3 +1,5 @@
+// Si un numero X es divisible por otro Y
+
 #include <stdio.h>
 
 #define DIVISIBLE(X,Y) ((X) % (Y) == 0)

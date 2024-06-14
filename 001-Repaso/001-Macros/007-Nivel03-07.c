@@ -1,3 +1,5 @@
+// Determinar el maximo entre tres enteros
+
 #include <stdio.h>
 
 #define MAX(X,Y,Z) ((X)>(Y) ? ((X)>(Z) ? (X): (Z)) : ((Y)>(Z) ? (Y) : (Z)))

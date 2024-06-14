@@ -1,3 +1,5 @@
+// Determinar si un numero esta entre el 0 y el 100
+
 #include <stdio.h>
 
 #define ENTRE_0_100(X) ((X)>=0 && (X)<=100)

@@ -1,3 +1,5 @@
+// Si un numero es par
+
 #include <stdio.h>
 
 #define PAR(X) ((X) % 2 == 0)

@@ -1,3 +1,5 @@
+// Determinar si dos numeros son consecutivos
+
 #include <stdio.h>
 
 #define CONSECUTIVOS(X,Y) (X == Y + 1 || X == Y - 1)
