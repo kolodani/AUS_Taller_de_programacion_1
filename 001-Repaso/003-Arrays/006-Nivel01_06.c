@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
     promedio = suma / N;
     for (int i = 0; i < N; i++)
     {
-        suma_varianza =+ (arreglo[i] - promedio) * (arreglo[i] - promedio);
+        suma_varianza = +(arreglo[i] - promedio) * (arreglo[i] - promedio);
     }
     varianza = (suma_varianza / N);
     varianza = sqrt(varianza);

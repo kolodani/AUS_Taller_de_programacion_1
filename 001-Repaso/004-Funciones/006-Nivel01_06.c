@@ -21,9 +21,11 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-int cantDigitos(unsigned long long int numero){
+int cantDigitos(unsigned long long int numero)
+{
     int digi = 0;
-    while (numero >= 10) {
+    while (numero >= 10)
+    {
         digi++;
         numero = numero / 10;
     }

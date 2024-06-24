@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#define MAX(X,Y,Z) ((X)>(Y) ? ((X)>(Z) ? (X): (Z)) : ((Y)>(Z) ? (Y) : (Z)))
+#define MAX(X, Y, Z) ((X) > (Y) ? ((X) > (Z) ? (X) : (Z)) : ((Y) > (Z) ? (Y) : (Z)))
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     printf("> ");
     scanf("%d", &tercero);
 
-    a = MAX(primero,segundo,tercero);
+    a = MAX(primero, segundo, tercero);
     printf("El mayor numero de los tres es: %d\n", a);
 
     return 0;

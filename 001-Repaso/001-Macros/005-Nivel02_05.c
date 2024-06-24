@@ -2,9 +2,10 @@
 
 #include <stdio.h>
 
-#define ENTRE_0_100(X) ((X)>=0 && (X)<=100)
+#define ENTRE_0_100(X) ((X) >= 0 && (X) <= 100)
 
-int main(){
+int main()
+{
     int a, numero;
 
     printf("Ingrese un numero entero y te dire si esta entre 0 y 100\n");
@@ -13,10 +14,12 @@ int main(){
 
     a = ENTRE_0_100(numero);
 
-    if (a == 1){
+    if (a == 1)
+    {
         printf("El numero %d esta entre 0 y 100\n", numero);
     }
-    else if (a == 0){
+    else if (a == 0)
+    {
         printf("El numero %d no esta entre 0 y 100\n", numero);
     }
 

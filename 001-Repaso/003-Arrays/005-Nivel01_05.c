@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     printf("Arreglo de 10 flotantes:\n");
     for (int i = 0; i < N; i++)
     {
-        arreglo[i] = (rand() % 10000000)/1000000.0;
+        arreglo[i] = (rand() % 10000000) / 1000000.0;
         printf("%f ", arreglo[i]);
     }
     printf("\n");

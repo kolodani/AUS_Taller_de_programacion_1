@@ -37,11 +37,11 @@ int main(int argc, char const *argv[])
         break;
     }
 
-
     return 0;
 }
 
-double ingreso(){
+double ingreso()
+{
     double temperatura;
     printf("Ingrese un valor de temperatura:\n");
     printf("> ");
@@ -49,12 +49,14 @@ double ingreso(){
     return temperatura;
 }
 
-double toFarenheit(double temp){
-    temp = (temp * (9.0/5.0)) + 32;
+double toFarenheit(double temp)
+{
+    temp = (temp * (9.0 / 5.0)) + 32;
     return temp;
 }
 
-double toCelcius(double temp){
-    temp = (temp - 32) * (5.0/9.0);
+double toCelcius(double temp)
+{
+    temp = (temp - 32) * (5.0 / 9.0);
     return temp;
 }

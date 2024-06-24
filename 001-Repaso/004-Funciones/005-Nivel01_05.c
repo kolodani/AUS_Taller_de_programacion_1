@@ -19,44 +19,53 @@ int main(int argc, char *argv[])
 
     signoNumero = signo(numero);
 
-    switch (signoNumero) {
-        case CERO:
-            printf("El cero no tiene divisores.\n");
-            break;
-        case POSITIVO:
-            printf("Los divisores de %d son:\n", numero);
-            for (int i = 1; i <= numero; i++) {
-                divisores(numero, i);
-            }
-            break;
-        case NEGATIVO:
-            printf("Los divisores de %d son:\n", numero);
-            for (int i = -1; i >= numero; i--) {
-                divisores(numero, i);
-            }
-            break;
-        default:
-            printf("Error, no entro en ningun caso.\n");
-            break;
+    switch (signoNumero)
+    {
+    case CERO:
+        printf("El cero no tiene divisores.\n");
+        break;
+    case POSITIVO:
+        printf("Los divisores de %d son:\n", numero);
+        for (int i = 1; i <= numero; i++)
+        {
+            divisores(numero, i);
+        }
+        break;
+    case NEGATIVO:
+        printf("Los divisores de %d son:\n", numero);
+        for (int i = -1; i >= numero; i--)
+        {
+            divisores(numero, i);
+        }
+        break;
+    default:
+        printf("Error, no entro en ningun caso.\n");
+        break;
     }
 
     return 0;
 }
 
-int signo(int numero){
-    if (numero > 0) {
+int signo(int numero)
+{
+    if (numero > 0)
+    {
         return POSITIVO;
     }
-    else if (numero < 0) {
+    else if (numero < 0)
+    {
         return NEGATIVO;
     }
-    else {
+    else
+    {
         return CERO;
     }
 }
 
-void divisores(int numero, int divi){
-    if(numero % divi == 0){
+void divisores(int numero, int divi)
+{
+    if (numero % divi == 0)
+    {
         printf("%d ", divi);
     }
 }

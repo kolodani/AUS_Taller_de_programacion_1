@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#define MAX(X,Y) ((X)>(Y)?(X):(Y))
+#define MAX(X, Y) ((X) > (Y) ? (X) : (Y))
 
 int main(int argc, char *argv[])
 {
@@ -15,10 +15,12 @@ int main(int argc, char *argv[])
     printf("> ");
     scanf("%d", &numero2);
 
-    if (numero1 == numero2){
+    if (numero1 == numero2)
+    {
         printf("Los dos numeros son %d, osea son iguales\n", numero1);
-    } 
-    else {
+    }
+    else
+    {
         resultado = MAX(numero1, numero2);
         printf("El maximo entre %d y %d es: %d\n", numero1, numero2, resultado);
     }

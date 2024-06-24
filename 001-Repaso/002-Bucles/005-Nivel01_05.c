@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
     {
         for (int i = primero; i <= segundo; i++)
         {
-            producto = producto * i ;
+            producto = producto * i;
         }
         printf("El producto de los numeros desde %d hasta %d es: %d\n", primero, segundo, producto);
     }

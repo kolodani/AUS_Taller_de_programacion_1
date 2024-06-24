@@ -14,13 +14,16 @@ int main(int argc, char *argv[])
 
     a = PAR(numero);
 
-    if (a == 0){
+    if (a == 0)
+    {
         printf("El numero ingresado es %d y es IMPAR\n", numero);
     }
-    else if (a == 1) {
+    else if (a == 1)
+    {
         printf("El numero ingresado es %d y es PAR\n", numero);
     }
-    else {
+    else
+    {
         printf("No ingreso un numero valido, error!!!\n");
     }
 

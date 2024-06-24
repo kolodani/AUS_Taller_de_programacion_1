@@ -44,7 +44,8 @@ bool validador(int a)
     }
 }
 
-int convertidor(int dias, int horas){
+int convertidor(int dias, int horas)
+{
     int minutos = (dias * 24 * 60) + (horas * 60);
     return minutos;
 }

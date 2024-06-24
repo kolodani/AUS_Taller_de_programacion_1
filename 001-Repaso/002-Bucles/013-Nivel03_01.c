@@ -8,18 +8,20 @@ int main(int argc, char *argv[])
     char mayusculas = 'A';
 
     printf("El abecedario en minusculas:\n");
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < 26; i++)
+    {
         printf("%c ", minusculas);
         minusculas++;
     }
     printf("\n");
 
     printf("El abecedario en mayusculas:\n");
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < 26; i++)
+    {
         printf("%c ", mayusculas);
         mayusculas++;
     }
     printf("\n");
-    
+
     return 0;
 }

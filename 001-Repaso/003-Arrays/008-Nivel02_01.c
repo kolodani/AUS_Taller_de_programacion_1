@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
     {
         A[i] = rand() % 11;
         printf("%d ", A[i]);
-        if(i != N - 1)
+        if (i != N - 1)
         {
             printf(",");
         }

@@ -11,13 +11,16 @@ int main(int argc, char *argv[])
     printf("> ");
     scanf("%d", &numero);
 
-    if (numero > 0){
-        for (int i = numero; i >= 2; i--) {
+    if (numero > 0)
+    {
+        for (int i = numero; i >= 2; i--)
+        {
             factorial = factorial * i;
         }
         printf("EL factorial de %d es: %d\n", numero, factorial);
     }
-    else {
+    else
+    {
         printf("El entero tiene que ser mayor a cero, sino no se puede hacer el factorial\n");
     }
 

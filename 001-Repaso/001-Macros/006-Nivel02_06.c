@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#define CONSECUTIVOS(X,Y) (X == Y + 1 || X == Y - 1)
+#define CONSECUTIVOS(X, Y) (X == Y + 1 || X == Y - 1)
 
 int main(int argc, char *argv[])
 {
@@ -19,13 +19,19 @@ int main(int argc, char *argv[])
 
     a = CONSECUTIVOS(numero1, numero2);
 
-    if (a == 1){
-        if(numero1 > numero2){
+    if (a == 1)
+    {
+        if (numero1 > numero2)
+        {
             printf("Los numeros %d y %d son consecutivos\n", numero2, numero1);
-        } else {
+        }
+        else
+        {
             printf("Los numeros %d y %d son consecutivos\n", numero1, numero2);
         }
-    } else if (a == 0) {
+    }
+    else if (a == 0)
+    {
         printf("Los numeros %d y %d no son consecutivos\n", numero1, numero2);
     }
 
