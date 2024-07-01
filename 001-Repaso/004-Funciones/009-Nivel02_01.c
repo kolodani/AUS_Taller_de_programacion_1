@@ -12,26 +12,33 @@ int main(int argc, char *argv[])
 {
     int esPrimo;
     printf("Los numeros primos del 1 al 500:\n");
-    for(int i = 1; i <= 500; i++){
+    for (int i = 1; i <= 500; i++)
+    {
         esPrimo = primo(i);
-        if (esPrimo) {
+        if (esPrimo)
+        {
             printf("%d ", i);
         }
     }
     return 0;
 }
 
-int primo(int numero){
+int primo(int numero)
+{
     int cant = 0;
-    for (int i = 1;i <= numero;i++) {
-        if(numero % i == 0){
+    for (int i = 1; i <= numero; i++)
+    {
+        if (numero % i == 0)
+        {
             cant++;
         }
     }
-    if (cant <= 2) {
+    if (cant <= 2)
+    {
         return TRUE;
     }
-    else {
+    else
+    {
         return FALSE;
     }
 }

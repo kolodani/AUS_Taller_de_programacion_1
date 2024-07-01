@@ -27,23 +27,29 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void aleatorio(int arreglo[]){
-    for (int i = 0; i < N; i++) {
+void aleatorio(int arreglo[])
+{
+    for (int i = 0; i < N; i++)
+    {
         arreglo[i] = rand() % 101;
     }
 }
 
-void imprimir(int arreglo[]){
+void imprimir(int arreglo[])
+{
     printf("El arreglo:\n");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         printf("%d ", arreglo[i]);
     }
     printf("\n");
 }
 
-int suma(int arreglo[], int tama){
+int suma(int arreglo[], int tama)
+{
     int sumados = 0;
-    for (int i = 0; i < tama; i++) {
+    for (int i = 0; i < tama; i++)
+    {
         sumados += arreglo[i];
     }
     return sumados;

@@ -13,33 +13,40 @@ int main(int argc, char *argv[])
     int arreglo[N];
     int estaOrdenado;
     printf("Ingresa un arreglo y te dire si esta ordenado:\n");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         printf("Valor %d> ", i + 1);
         scanf("%d", &arreglo[i]);
     }
     estaOrdenado = ordenado(arreglo);
-    if(estaOrdenado){
+    if (estaOrdenado)
+    {
         printf("El arreglo SI esta ordenado!!!\n");
     }
-    else {
+    else
+    {
         printf("El arreglo NO esta ordenado!!!\n");
     }
 
     return 0;
 }
 
-int ordenado(int arreglo[]){
+int ordenado(int arreglo[])
+{
     int ordenado = 0;
-    for (int i = 1; i < N; i++) {
-        if(arreglo[i] < arreglo[i - 1]){
+    for (int i = 1; i < N; i++)
+    {
+        if (arreglo[i] < arreglo[i - 1])
+        {
             ordenado++;
         }
     }
-    if(ordenado == 0){
+    if (ordenado == 0)
+    {
         return TRUE;
     }
-    else {
+    else
+    {
         return FALSE;
     }
 }
-

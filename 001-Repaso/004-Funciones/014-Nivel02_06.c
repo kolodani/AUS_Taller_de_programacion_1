@@ -15,23 +15,29 @@ int main(int argc, char *argv[])
     srand(time(NULL));
     int arreglo[N];
     printf("El arreglo esta desordenado:\n");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         arreglo[i] = rand() % 101;
         printf("%d ", arreglo[i]);
     }
     ordenado(arreglo);
     printf("\nEl arreglo esta ordenado:\n");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         printf("%d ", arreglo[i]);
     }
     return 0;
 }
 
-void ordenado(int arreglo[]){
+void ordenado(int arreglo[])
+{
     int aux;
-    for (int i = 0; i < N; i++) {
-        for (int j = i; j < N; j++) {
-            if(arreglo[i] > arreglo[j]){
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = i; j < N; j++)
+        {
+            if (arreglo[i] > arreglo[j])
+            {
                 aux = arreglo[i];
                 arreglo[i] = arreglo[j];
                 arreglo[j] = aux;
@@ -40,9 +46,10 @@ void ordenado(int arreglo[]){
     }
 }
 
-
-void imprimir(int arreglo[]){
-    for (int i = 0; i > N; i++) {
+void imprimir(int arreglo[])
+{
+    for (int i = 0; i > N; i++)
+    {
         arreglo[i] = rand() % 10;
         printf("%d ", arreglo[i]);
     }

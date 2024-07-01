@@ -13,43 +13,48 @@ int main(int argc, char *argv[])
     int opcion;
     int numero;
 
-    do {
+    do
+    {
         menu();
         opcion = respuesta();
-        switch (opcion) {
-            case 1:
-                numero = ingreso();
-                decimalbinario(numero);
-                break;
-            case 2:
-                numero = ingreso();
-                binariodecimal(numero);
-                break;
-            case 0:
-                printf("Fin del programa.\n");
-                break;
-            default:
-                printf("Opcion invalida!!!.\n");
-                break;
+        switch (opcion)
+        {
+        case 1:
+            numero = ingreso();
+            decimalbinario(numero);
+            break;
+        case 2:
+            numero = ingreso();
+            binariodecimal(numero);
+            break;
+        case 0:
+            printf("Fin del programa.\n");
+            break;
+        default:
+            printf("Opcion invalida!!!.\n");
+            break;
         }
     } while (opcion != 0);
     return 0;
 }
 
-void menu(){
+void menu()
+{
     printf("1) Decimal a Binario.\n");
     printf("2) Binario a Decimal.\n");
     printf("0) Fin del Programa.\n");
 }
 
-int respuesta(){
+int respuesta()
+{
     int res;
     printf("> ");
     scanf("%d", &res);
     return res;
 }
 
-int ingreso(){
+int ingreso()
+{
     int res;
     printf("Ingrese el valor a convertir:\n");
     printf("> ");
@@ -57,12 +62,14 @@ int ingreso(){
     return res;
 }
 
-void decimalbinario(int numero){
+void decimalbinario(int numero)
+{
     int auxiliar = numero;
     int multiplicador = 1;
     int binario = 0;
     int resto;
-    while (numero != 0) {
+    while (numero != 0)
+    {
         resto = numero % 2;
         numero = numero / 2;
         binario = binario + (resto * multiplicador);
@@ -71,12 +78,14 @@ void decimalbinario(int numero){
     printf("El Numero: %d es en binario: %d.\n", auxiliar, binario);
 }
 
-void binariodecimal(int numero){
+void binariodecimal(int numero)
+{
     int auxiliar = numero;
     int multiplicador = 1;
     int decimal = 0;
     int resto;
-    while (numero != 0) {
+    while (numero != 0)
+    {
         resto = numero % 10;
         numero = numero / 10;
         decimal = decimal + (resto * multiplicador);

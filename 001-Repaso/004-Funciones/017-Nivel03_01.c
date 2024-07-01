@@ -38,30 +38,40 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void carga(int arreglo[]){
-    for (int i = 0;i < N;i++) {
+void carga(int arreglo[])
+{
+    for (int i = 0; i < N; i++)
+    {
         arreglo[i] = rand() % 101;
-        for (int j = 0; j < i; j++) {
-            if(arreglo[i] == arreglo[j]){
+        for (int j = 0; j < i; j++)
+        {
+            if (arreglo[i] == arreglo[j])
+            {
                 i--;
             }
         }
     }
 }
 
-void imprimir(int arreglo[]){
+void imprimir(int arreglo[])
+{
     printf("El arreglo impreso:\n");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         printf("%d ", arreglo[i]);
     }
     printf("\n");
 }
 
-void interseccion(int A[], int B[]){
+void interseccion(int A[], int B[])
+{
     printf("Interseccion de A en B:\n");
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            if(A[i] == B[j]){
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            if (A[i] == B[j])
+            {
                 printf("%d ", A[i]);
             }
         }
@@ -69,35 +79,46 @@ void interseccion(int A[], int B[]){
     printf("\n");
 }
 
-void uniones(int A[], int B[]){
+void uniones(int A[], int B[])
+{
     printf("Union de A y B:\n");
-    for (int i = 0;i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         printf("%d ", A[i]);
     }
-    for (int j = 0;j < N; j++) {
+    for (int j = 0; j < N; j++)
+    {
         int cant = 0;
-        for (int k = 0; k < N; k++) {
-            if (B[j] == A[k]) {
+        for (int k = 0; k < N; k++)
+        {
+            if (B[j] == A[k])
+            {
                 cant++;
             }
         }
-        if(cant == 0){
+        if (cant == 0)
+        {
             printf("%d ", B[j]);
         }
     }
     printf("\n");
 }
 
-void diferencia(int A[], int B[]){
+void diferencia(int A[], int B[])
+{
     printf("Diferencia de A y B:\n");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         int cant = 0;
-        for (int j = 0; j < N; j++) {
-            if(A[i] == B[j]){
+        for (int j = 0; j < N; j++)
+        {
+            if (A[i] == B[j])
+            {
                 cant++;
             }
         }
-        if (cant == 0) {
+        if (cant == 0)
+        {
             printf("%d ", A[i]);
         }
     }
