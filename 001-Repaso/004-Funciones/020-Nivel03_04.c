@@ -77,7 +77,8 @@ int setTiradas()
     return numero;
 }
 
-void tiradaDado(int lanzamientos[], int jugadas[], int tiradas){
+void tiradaDado(int lanzamientos[], int jugadas[], int tiradas)
+{
     for (int i = 0; i < tiradas; i++)
     {
         jugadas[i] = (rand() % 6) + 1;
@@ -85,7 +86,8 @@ void tiradaDado(int lanzamientos[], int jugadas[], int tiradas){
     }
 }
 
-void resultado(int jugadas[], int tiradas){
+void resultado(int jugadas[], int tiradas)
+{
     printf("Las tiradas de dado son:\n");
     for (int i = 0; i < tiradas; i++)
     {
@@ -94,14 +96,16 @@ void resultado(int jugadas[], int tiradas){
     printf("\n");
 }
 
-void apariciones(int lanzamientos[]){
+void apariciones(int lanzamientos[])
+{
     for (int i = 0; i < N; i++)
     {
         printf("Apariciones de %d: %d\n", i + 1, lanzamientos[i]);
     }
 }
 
-int setPrediccion(int lanzamientos[], int numero){
+int setPrediccion(int lanzamientos[], int numero)
+{
     int prediccion = 0;
     for (int i = 0; i < N; i++)
     {
@@ -113,6 +117,7 @@ int setPrediccion(int lanzamientos[], int numero){
     return prediccion;
 }
 
-void adivinanza(char mensajes[][M], int prediccion){
+void adivinanza(char mensajes[][M], int prediccion)
+{
     printf("Tu prediccion fue: %s", mensajes[prediccion]);
 }

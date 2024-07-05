@@ -33,7 +33,8 @@ int ingresar()
     return a;
 }
 
-int mcd(int a, int b){
+int mcd(int a, int b)
+{
     if (a % b == 0)
     {
         return b;

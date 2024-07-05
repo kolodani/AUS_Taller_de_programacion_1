@@ -68,7 +68,8 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-int menu(){
+int menu()
+{
     int res;
     printf("Menu principal, elija un opcion valida:\n");
     printf("1) Suma.\n");
@@ -82,7 +83,8 @@ int menu(){
     return res;
 }
 
-int setValor(){
+int setValor()
+{
     int a;
     do
     {
@@ -94,18 +96,20 @@ int setValor(){
     return a;
 }
 
-int suma(int a, int b){
+int suma(int a, int b)
+{
     if (b == 0)
     {
         return a;
     }
     else
     {
-        suma(a + 1 , b - 1);
+        suma(a + 1, b - 1);
     }
 }
 
-int prod(int a, int b){
+int prod(int a, int b)
+{
     if (b == 1)
     {
         return a;
@@ -116,7 +120,8 @@ int prod(int a, int b){
     }
 }
 
-int exponente(int a, int b){
+int exponente(int a, int b)
+{
     if (b == 1)
     {
         return a;
@@ -127,7 +132,8 @@ int exponente(int a, int b){
     }
 }
 
-int factorial(int a){
+int factorial(int a)
+{
     if (a == 1)
     {
         return a;
@@ -138,7 +144,8 @@ int factorial(int a){
     }
 }
 
-int fib(int a){
+int fib(int a)
+{
     static int fibo = 1;
     static int fibo2 = 2;
     int aux = fibo + fibo2;
